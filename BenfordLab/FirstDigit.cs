@@ -17,7 +17,11 @@ namespace BenfordLab
          */
         public static int getFirstDigit(int digit) {
             // TODO
-            return 0;
+            f_digit = Math.Abs(digit);
+            while (f_digit >= 10)
+               f_digit /= 10;
+            return f_digit;
+            
         }    
     }
 }
