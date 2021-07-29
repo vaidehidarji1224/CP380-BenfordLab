@@ -28,22 +28,38 @@ namespace BenfordLab
                     Population = int.Parse(data.Groups[2].Value)
                 });
 
-            // manipulate the data!
-            //
-            // Select() with:
-            //   - Country
-            //   - Digit (using: FirstDigit.getFirstDigit() )
-            // 
-            // Then:
-            //   - you need to count how many of *each digit* there are
-            //
-            // Lastly:
-            //   - transform (select) the data so that you have a list of
-            //     BenfordData objects
-            //
-            var m = ??? ;
+             
+            int[] arr = new int[mi];  //new array    // manipulate the data!
+
+            int o = 0;
+            foreach (var p in data)     //   - Country
+            {
+                arr[o] = FirstDigit.getFirstDigit(p.Population);  //   - Digit (using: FirstDigit.getFirstDigit() )
+                o++;
+            }
+
+            List<BenfordData> D = new List<BenfordData>();
+            for (int j = 1;  j< 10; j++)   //   - you need to count how many of *each digit* there are
+            {
+                int a = 0;
+                for (int a = 0; a < arr.Length; a++)
+                {
+                    if (a == arr[a])
+                    {
+                        a++;
+                    }
+                }
+                D.Add(new BenfordData
+                {
+                    Digit = j,
+                    Count = a
+                });
+                D.Concat(D);
+            }
+            var m = D;
 
             return m.ToArray();
         }
     }
-}
+        }
+   
