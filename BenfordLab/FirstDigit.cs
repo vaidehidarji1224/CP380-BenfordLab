@@ -15,9 +15,9 @@ namespace BenfordLab
          *   10 ==> returns 1
          *   654321 ==> returns 6
          */
-        public static int getFirstDigit(int digit) {
+        public static int getFirstDigit(int f_digit) {
             // TODO
-            f_digit = Math.Abs(digit);
+            f_digit = Math.Abs(f_digit);
            if (f_digit >= 10)
                f_digit /= 10;
             return f_digit;
